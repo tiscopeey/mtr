@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- css here -->
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p id="line" style="display:none;"></p>
+    <p id="station" style="display:none;"></p>
+    <div class="centerDiv">
+      <h1 id="lin">____線</h1>
+      <h1> -- </h1>
+      <h1 id="sta">____</h1>
+      <h1>站</h1>
+    </div>
+
+
+    <!-- Page ONE -->
+    <div id="pgOne">
+      <div class="centerDiv" id="p11">
+        <input type="button" class="btnThree" value="港島線" onclick="depPlace('ISL');">
+        <input type="button" class="btnThree" value="將軍澳線" onclick="depPlace('TKL');">
+      </div>
+      <div class="centerDiv" id="p12">
+        <input type="button" class="btnThree" value="屯馬線" onclick="depPlace('TML');">
+        <input type="button" class="btnThree" value="東鐵線" onclick="depPlace('EAL');">
+      </div>
+      <div class="centerDiv" id="p13">
+        <input type="button" class="btnThree" value="東涌線" onclick="depPlace('TCL');">
+        <input type="button" class="btnThree" value="機場快線" onclick="depPlace('AEL');">
+      </div>
+      <div class="centerDiv" id="p13">
+        <input type="button" class="btnThree" value="觀塘線" onclick="depPlace('KTL');">
+        <input type="button" class="btnThree" value="荃灣線" onclick="depPlace('TWL');">
+      </div>
+	  <div class="centerDiv" id="p13">
+        <input type="button" class="btnThree" style="width: 100%;" value="南港島線" onclick="depPlace('SIL');">
+      </div>
+    </div>
+
+    <div id="stat">
+      <!-- TKL -->
+      <div id="TKLDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="北角" onclick="schQuery('NOP');">
+          <input type="button" class="btnThree" value="鰂魚涌" onclick="schQuery('QUB');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="油塘" onclick="schQuery('YAT');">
+          <input type="button" class="btnThree" value="調景嶺" onclick="schQuery('TIK');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="將軍澳" onclick="schQuery('TKO');">
+          <input type="button" class="btnThree" value="康城" onclick="schQuery('LHP');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="坑口" onclick="schQuery('HAH');">
+          <input type="button" class="btnThree" value="寶琳" onclick="schQuery('POA');">
+        </div>
+      </div>
+
+      <!-- SIL -->
+      <div id="SILDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnTwo" value="金鐘" onclick="schQuery('ADM');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="海洋公園" onclick="schQuery('OCP');">
+          <input type="button" class="btnThree" value="黃竹坑" onclick="schQuery('WCH');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="利東" onclick="schQuery('LET');">
+          <input type="button" class="btnThree" value="海怡半島" onclick="schQuery('SOH');">
+        </div>
+      </div>
+
+      <!-- AEL -->
+      <div id="AELDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnTwo" value="機場" onclick="schQuery('AIR');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="香港" onclick="schQuery('HOK');">
+          <input type="button" class="btnThree" value="九龍" onclick="schQuery('KOW');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="青衣" onclick="schQuery('TSY');">
+          <input type="button" class="btnThree" value="機場博覽館" onclick="schQuery('AWE');">
+        </div>
+      </div>
+
+      <!-- TCL -->
+      <div id="TCLDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnTwo" style="width: 50%;" value="香港" onclick="schQuery('HOK');">
+          <input type="button" class="btnTwo" style="width: 50%;" value="東涌" onclick="schQuery('TUC');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="九龍" onclick="schQuery('KOW');">
+          <input type="button" class="btnThree" value="奧運" onclick="schQuery('OLY');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="南昌" onclick="schQuery('NAC');">
+          <input type="button" class="btnThree" value="荔景" onclick="schQuery('LAK');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="青衣" onclick="schQuery('TSY');">
+          <input type="button" class="btnThree" value="欣澳" onclick="schQuery('SUN');">
+        </div>
+      </div>
+
+      <!-- EAL -->
+      <div id="EALDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnTwo" value="金鐘" onclick="schQuery('ADM');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="會展" onclick="schQuery('EXC');">
+          <input type="button" class="btnThree" value="紅磡" onclick="schQuery('HUH');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="旺角東" onclick="schQuery('MKK');">
+          <input type="button" class="btnThree" value="九龍塘" onclick="schQuery('KOT');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="大圍" onclick="schQuery('TAW');">
+          <input type="button" class="btnThree" value="沙田" onclick="schQuery('SHT');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="火炭" onclick="schQuery('FOT');">
+          <input type="button" class="btnThree" value="大學" onclick="schQuery('UNI');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="大埔墟" onclick="schQuery('TAP');">
+          <input type="button" class="btnThree" value="太和" onclick="schQuery('TWO');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="粉嶺" onclick="schQuery('FAN');">
+          <input type="button" class="btnThree" value="上水" onclick="schQuery('SHS');">
+        </div>
+      </div>
+
+      <!-- TML -->
+      <div id="TMLDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="烏溪沙" onclick="schQuery('WKS');">
+          <input type="button" class="btnThree" value="馬鞍山" onclick="schQuery('MOS');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="恆安" onclick="schQuery('HEO');">
+          <input type="button" class="btnThree" value="大水坑" onclick="schQuery('TSH');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="石門" onclick="schQuery('SHM');">
+          <input type="button" class="btnThree" value="第一城" onclick="schQuery('CIO');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="沙田圍" onclick="schQuery('STW');">
+          <input type="button" class="btnThree" value="車公廟" onclick="schQuery('CKT');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="大圍" onclick="schQuery('TAW');">
+          <input type="button" class="btnThree" value="顯徑" onclick="schQuery('HIK');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="鑽石山" onclick="schQuery('DIH');">
+          <input type="button" class="btnThree" value="啟德" onclick="schQuery('KAT');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="宋王臺" onclick="schQuery('SUW');">
+          <input type="button" class="btnThree" value="土瓜灣" onclick="schQuery('TKW');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="何文田" onclick="schQuery('HOM');">
+          <input type="button" class="btnThree" value="紅磡" onclick="schQuery('HUH');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="尖東" onclick="schQuery('ETS');">
+          <input type="button" class="btnThree" value="柯士甸" onclick="schQuery('AUS');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="南昌" onclick="schQuery('NAC');">
+          <input type="button" class="btnThree" value="美孚" onclick="schQuery('MEF');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="荃灣西" onclick="schQuery('TWW');">
+          <input type="button" class="btnThree" value="錦上路" onclick="schQuery('KSR');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="元朗" onclick="schQuery('YUL');">
+          <input type="button" class="btnThree" value="朗屏" onclick="schQuery('LOP');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="天水圍" onclick="schQuery('TIS');">
+          <input type="button" class="btnThree" value="兆康" onclick="schQuery('SIH');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" style="width: 100%;" value="屯門" onclick="schQuery('TUM');">
+        </div>
+      </div>
+
+      <!-- TWL -->
+      <div id="TWLDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="中環" onclick="schQuery('CEN');">
+          <input type="button" class="btnThree" value="金鐘" onclick="schQuery('ADM');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="尖沙咀" onclick="schQuery('TST');">
+          <input type="button" class="btnThree" value="佐敦" onclick="schQuery('JOR');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="油麻地" onclick="schQuery('YMT');">
+          <input type="button" class="btnThree" value="旺角" onclick="schQuery('MOK');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="太子" onclick="schQuery('PRE');">
+          <input type="button" class="btnThree" value="深水埗" onclick="schQuery('SSP');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="長沙灣" onclick="schQuery('CSW');">
+          <input type="button" class="btnThree" value="荔枝角" onclick="schQuery('LCK');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="美孚" onclick="schQuery('MEF');">
+          <input type="button" class="btnThree" value="荔景" onclick="schQuery('LAK');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="葵芳" onclick="schQuery('KWF');">
+          <input type="button" class="btnThree" value="葵興" onclick="schQuery('KWH');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="大窩口" onclick="schQuery('TWH');">
+          <input type="button" class="btnThree" value="荃灣" onclick="schQuery('TSW');">
+        </div>
+      </div>
+
+      <!-- ISL -->
+      <div id="ISLDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="柴灣" onclick="schQuery('CHW');">
+          <input type="button" class="btnThree" value="杏花邨" onclick="schQuery('HFC');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="筲箕灣" onclick="schQuery('SKW');">
+          <input type="button" class="btnThree" value="西灣河" onclick="schQuery('SWH');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="太古" onclick="schQuery('TAK');">
+          <input type="button" class="btnThree" value="鰂魚涌" onclick="schQuery('QUB');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="北角" onclick="schQuery('NOP');">
+          <input type="button" class="btnThree" value="炮台山" onclick="schQuery('FOH');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="天后" onclick="schQuery('TIH');">
+          <input type="button" class="btnThree" value="銅鑼灣" onclick="schQuery('CAB');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="灣仔" onclick="schQuery('WAC');">
+          <input type="button" class="btnThree" value="金鐘" onclick="schQuery('ADM');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="中環" onclick="schQuery('CEN');">
+          <input type="button" class="btnThree" value="上環" onclick="schQuery('SHW');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="西營盤" onclick="schQuery('SYP');">
+          <input type="button" class="btnThree" value="香港大學" onclick="schQuery('HKU');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" style="width: 100%;" value="堅尼地城" onclick="schQuery('KET');">
+        </div>
+      </div>
+	  
+	  <!-- KTL -->
+      <div id="KTLDiv" style="display: none;">
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="調景嶺" onclick="schQuery('TIK');">
+          <input type="button" class="btnThree" value="油塘" onclick="schQuery('YAT');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="藍田" onclick="schQuery('LAT');">
+          <input type="button" class="btnThree" value="觀塘" onclick="schQuery('KWT');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="牛頭角" onclick="schQuery('NTK');">
+          <input type="button" class="btnThree" value="九龍灣" onclick="schQuery('KOB');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="彩虹" onclick="schQuery('CHH');">
+          <input type="button" class="btnThree" value="鑽石山" onclick="schQuery('DIH');">
+        </div>
+        <div class="centerDiv" id="p42">
+          <input type="button" class="btnThree" value="黃大仙" onclick="schQuery('WTS');">
+          <input type="button" class="btnThree" value="樂富" onclick="schQuery('LOF');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="石硤尾" onclick="schQuery('SKM');">
+          <input type="button" class="btnThree" value="太子" onclick="schQuery('PRE');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="旺角" onclick="schQuery('MOK');">
+          <input type="button" class="btnThree" value="油麻地" onclick="schQuery('YMT');">
+        </div>
+        <div class="centerDiv" id="p41">
+          <input type="button" class="btnThree" value="何文田" onclick="schQuery('HOM');">
+          <input type="button" class="btnThree" value="黃埔" onclick="schQuery('WHA');">
+        </div>
+      </div>
+
+
+    </div>
+  
+
+    <div id="routeList" style="display: none;">
+      <table id="listTable" class="timetable">
+        
+      </table>
+    </div>
+
+    <div id="stationList" style="display: none;">
+      <table id="stationTable" class="timetable">
+        
+      </table>
+    </div>
+
+    <div class="centerDiv" id="loadingdiv">
+      <span id="loading" class="loadingsrn" style="display: none;">搜尋中...</span>
+    </div>
+
+    <div class="centerDiv" id="bkhp">
+      <input type="button" class="btnOne" value="返回主頁" onclick="hptoHome();" style="background-color: #69928F; display: block;" id="hp">
+    </div>
+
+	<script src="script.js"></script>
+  </body>
+</html>
