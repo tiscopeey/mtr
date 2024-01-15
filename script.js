@@ -83,6 +83,7 @@ function schQuery(station){
 			if (down != null){
 				leng = down.length;
 			}
+			var x = "";
 			
 			if (len != ""){     
 				var x = '<tr><td><strong>上行</strong></td></tr>';
@@ -128,6 +129,10 @@ function schQuery(station){
 
 					var x = x + "<tr><td>" + time + "</td><td>" + platformNo + "</td><td>" + outputDestination + "</td></tr>";
 				}
+			}
+			
+			if (x == ""){
+				var x = '<tr><td><strong>No information</strong></td></tr>';
 			}
 			document.getElementById("listTable").innerHTML = x;
 			document.getElementById("routeList").style.display = "block";
