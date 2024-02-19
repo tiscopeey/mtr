@@ -117,6 +117,8 @@ function schQuery(stopId, line){
 	document.getElementById("stationList").style.display = "none";
 	document.getElementById("loading").style.display = "block";
 
+	markdown("MTR-Info: ", line, stopId, nearbyInformation);
+	
 	for (let i = 0; i < response.length; i++){
 		if (stopId == response[i]["code"]){
 			allLine.push({line: response[i]["line"], sta: response[i]["code"], name: response[i]["name"]});
