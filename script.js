@@ -190,7 +190,7 @@ function schQuery(stopId, line, refresh){
 				} else {
 					y += "<button class='btnMtrLine' id='btn" + allLine[i]["line"] + "' onclick='changeTable(\"" + allLine[i]["line"] + "\")'>" + mtrLineName(allLine[i]["line"]) + "</button>";
 				}
-				let z = '<div style="display: flex;"><div style="flex: 1;text-align: left;"><p style="margin: 2px;">現在時間</p><p style="margin: 2px;" id="currTime">' + currentTime.toLocaleTimeString('en-HK', {hourCycle: 'h23'}) + '</p></div><div style="flex: 1;text-align: right;"><p style="margin: 2px;">更新時間</p><p style="margin: 2px;">' + currentTime.toLocaleTimeString('en-HK', {hourCycle: 'h23'}) + '</p></div><img src="../images/refresh.png" style="width: 32px;height: 32px;text-align: right;margin: 6px 0px;" onclick="refreshSearch(\'' + stopId + '\')"></div>';
+				let z = '<div style="display: flex;"><div style="flex: 1;text-align: left;"><p style="margin: 2px;">現在時間</p><p style="margin: 2px;" id="currTime">' + currentTime.toLocaleTimeString('en-HK', {hourCycle: 'h23'}) + '</p></div><div style="flex: 1;text-align: right;"><p style="margin: 2px;">更新時間</p><p style="margin: 2px;">' + currentTime.toLocaleTimeString('en-HK', {hourCycle: 'h23'}) + '</p></div><img src="images/refresh.png" style="width: 32px;height: 32px;text-align: right;margin: 6px 0px;" onclick="refreshSearch(\'' + stopId + '\')"></div>';
 				if (apiReceived == allLine.length){
 					document.getElementById("heading").innerText = allLine[0]["name"] + "站";
 					line = line || allLine[0]["line"];
